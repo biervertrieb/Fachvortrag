@@ -29,7 +29,7 @@
 \begin{frame}{Zielsetzung}
     \begin{itemize}
         \item Einführung in das Thema Microservices
-        \item Überblick über Herausforderungen und Technologien
+        \item Überblick über Herausforderungen
         \item Nachvollziehen eines Definitionsversuchs
         \item Wertung
     \end{itemize}
@@ -38,6 +38,7 @@
     Folgende Punkte werden (fast) nicht behandelt:
     \begin{itemize}
         \item Vor- und Nachteile
+        \item Performance
         \item Service-Komposition
         \item Frameworks, Docker und Kubernetes
     \end{itemize}
@@ -51,35 +52,39 @@
         \item 2009 - Netflix spaltet den Monolithen und geht in die Cloud
         \item 2011 - "Microservices" - erste Erwähnung, workshop for software architects
         \item 2012 - "Microservices" - Namensgebung, workshop for software architects
-        \item 2014 - "Microservices, a definition of this new architectural term" - Lewis Fowler, Fachartikel für Thoughtworks
-        \item 2015 - "Building Microservices" - Buch von Sam Neil, Nachschlagewerk für design, development, deployment, testing und maintenance
+        \item 2014 - "Microservices, a definition of this new architectural term" - Lewis \& Fowler, Fachartikel für Thoughtworks
+        \item 2015 - "Building Microservices" - Buch von Sam Newman, Nachschlagewerk
     \end{itemize}
+\end{frame}
+\begin{frame}{Google Trends}
+    \includegraphics[scale=0.3]{verlauf.jpg} \\
+    Quelle: Google Trends Suche nach "Microservices"
 \end{frame}
 \begin{frame}{Grundlagen}
     \begin{block}{Service-Oriented Architecture}
-        Softwarekomponenten sind eigene Applikationen in einem verteilten System.
+        Softwarekomponenten sind eigene Applikationen in einem verteilten System.\\
     \end{block}
     \begin{block}{Agile Entwicklung}
         \begin{itemize}
-            \item Individuals and interactions over processes and tools
-            \item Working software over comprehensive documentation
-            \item Customer collaboration over contract negotiation
-            \item Responding to change over following a plan
+            \item Projektmanagementstrategie aus der Industrie
+            \item kurze Entwicklungszyklen, kleine Teams
+            \item enge Zusammenarbeit mit dem Kunden
+            \item Reaktion auf Änderungen anstatt an einem Plan festhalten
         \end{itemize}
     \end{block}
 \end{frame}
 \begin{frame}{Grundlagen}
     \begin{block}{DevOps}
         \begin{itemize}
-            \item Methodensammlung zum Kombinieren von Entwicklung (Dev) und Organisation(Ops)
+            \item Methodensammlung zum Kombinieren von Entwicklung (Dev) und Management(Ops)
             \item Effektive Prozesse und Werkzeuge zur Steigerung der Qualität und Geschwindigkeit
             \item Betrifft: Entwicklung, Qualitätsmanagement, Auslieferung, Wartung, Kommunikation, ...
-            \item Beispiele: Virtualisierung, Versionsverwaltung, Infrastructure as Code, Continuous Integration
+            \item Beispiele: Virtualisierung, Automatisierung, Versionsverwaltung, Infrastructure as Code
         \end{itemize}
     \end{block}
     \begin{block}{CI/CD}
         Continuous Integration, Continuous Deployment\\
-        Durchgehende Auslieferung von kleinen Änderungen anstatt Sammeln von Änderungen in größeren Updates
+        Durchgehende Auslieferung von kleinen Änderungen anstatt Sammeln von Änderungen in größeren Patches
     \end{block}
 \end{frame}
 \begin{frame}{Motivation}
@@ -89,47 +94,144 @@
             \item Wir betrachten große, komplexe Anwendungen.
             \item Wir wollen kleine, autonome Teams.
         \end{itemize}
-
     \end{block}
     \begin{block}{Prozesse}
         \begin{itemize}
             \item Agile Methoden
             \item CI/CD
             \item DevOps
-            \item ...
         \end{itemize}
     \end{block}
     \begin{block}{Architektur}
         \begin{itemize}
-            \item Welcher Stil passt zu unseren Anforderungen?
+            \item Skalierbar
+            \item Ausfallsicher
         \end{itemize}
     \end{block}
 
 \end{frame}
 
 \section{Microservices}
-\begin{frame}{Microservices}
+\begin{frame}{Was sind Microservices?}
+    \begin{itemize}
+        \item Architekturstil basierend auf SOA
+        \item Applikation wird aufgesplittet in voneinander unabhängig auslieferbare Services
+        \item Hohe Beliebtheit durch Kompatibilität mit modernen DevOps Methoden
+        \item Stil entspringt der Beobachtung von ähnlichen Vorangehensweisen aus der Industrie
+        \item Formale Definition fehlt
+        \item Gemeinsame Merkmale werden in dem Stil zusammengefasst
+        \item Näherungsdefinition durch Vergleiche zu anderen Stilen\\
+              Insbesondere Unterschiede zum Monolithischen Stil
+    \end{itemize}
 \end{frame}
-\begin{frame}{Microservices}
+\begin{frame}{Gemeinsame Merkmale}
+    \begin{block}{Unix Philosophie}
+        Do one thing and do it well
+    \end{block}
+    Für jeden Service gilt:
+    \begin{itemize}
+        \item dezentral
+        \item eigene Codebasis
+        \item unabhängiges Deployment
+        \item lose Kopplung
+        \item verwaltet seine benötigten Daten selbst
+        \item Kommunikation durch Netzwerkprotokolle
+    \end{itemize}
 \end{frame}
-\begin{frame}{Microservices}
+\begin{frame}{Unterschiede zu Monolithen}
+    \begin{itemize}
+        \item Unterschiedliche Technologien je nach Service
+        \item Fehleranfälligkeit
+        \item Skalierbarkeit
+        \item Erweiterbarkeit
+        \item Flexiblere Organisationsstruktur
+        \item dezentrale Datenverwaltung
+        \item Austauschbarkeit der Komponenten
+    \end{itemize}
 \end{frame}
-\begin{frame}{Kritik}
+\begin{frame}{Monolith vs Microservices}
+    \includegraphics[scale=0.4]{monolith.jpg} \\
+    Quelle: Fowler \& Lewis - Microservices: Nur ein weiteres Konzept
+    in der Softwarearchitektur oder mehr?
 \end{frame}
-\begin{frame}{Bewertung}
+\begin{frame}{Herausforderungen}
+    \begin{itemize}
+        \item Komplexität von verteilten Systemen
+        \item Abhängigikeiten zwischen Services gering halten
+        \item Datenkonsistenz da Services Kopien von benötigten Daten verwalten
+        \item Sicherstellen von Transaktionen auf Geschäftsebene schwierig
+        \item sehr viele bewegliche Teile im System
+        \item Wo zieht man die Grenzen zwischen den (Micro-)Services?
+    \end{itemize}
+\end{frame}
+\begin{frame}{Nachteile}
+    \begin{itemize}
+        \item Code über Servicegrenzen zu Ändern ist sehr teuer
+        \item Services sind Informationsbarrieren
+        \item Verlockung für gemeinsam genutzen Code sehr groß
+        \item Unklare API Spezifizierungen sind ein großes Problem
+        \item Mehr Entscheidungsmöglichkeiten führen zu mehr Fehlern
+        \item Erhöhte Latenz im Vergleich zu In-Prozess Kommunikation
+    \end{itemize}
 \end{frame}
 
 \section{Definitionsversuch}
+\begin{frame}{Definition?}
+    \begin{itemize}
+        \item Wichtiger Teil der Definition fehlt noch!
+        \item Wie groß ist ein "Micro"-Service?
+        \item Unterschiedliche Ansichten und Meinungen führen zu technical debt!
+        \item Das Verständnis an welchen Grenzen ein System in Microservices eingeteilt wird ist sehr wichtig
+    \end{itemize}
+\end{frame}
 \begin{frame}{Versuch 1: Komponententrennung durch Services}
+    \begin{itemize}
+        \item Idee: Aufspalten des Monoliths anhand von verwendeten Softwarekomponenten in Services
+        \item Meist hindern nur Dokumentation und Disziplin dass Komponenten nicht enger gekoppelt werden
+        \item Bibliotheken bestehen aus Komponenten die sich in-memory aufrufen
+        \item Änderungen führen dazu dass der gesamte Monolith neu deployed werden muss
+        \item Services sind out-of-process Komponenten
+        \item Wir wollen dass nur einzelne Services neu deployed werden müssen!
+        \item Erste Annäherung. Ein Service kann aus mehreren Komponenten bestehen die zusammen deployed werden
+    \end{itemize}
 \end{frame}
-\begin{frame}{Versuch 2: Zerlegen nach technischen Schichten}
+\begin{frame}{Versuch 2: Strukturierung nach technischen Schichten}
+    \begin{itemize}
+        \item Idee: Aufspalten des Monoliths in technische Schichten als Services
+        \item einzelne Teams für User-Interface-, Backend-, und Datenbankbereiche
+        \item Änderungen an einer Schicht führen meist Änderungen in anderen technischen Schichten nach sich
+        \item Diese Änderungen sind zwangsläufig Service-übergreifend und Team-übergreifend und damit extrem teuer!
+    \end{itemize}
 \end{frame}
-\begin{frame}{Versuch 3: Strukturierung nach Geschäftseinheiten}
-\end{frame}
-\begin{frame}{Bewertung der Definition}
+\begin{frame}{Versuch 3: Zerlegen anhand von Geschäftsstrukturen}
+    \begin{itemize}
+        \item Idee: Aufspalten des Monoliths in fachlich getrennte Geschäftsstrukturen
+        \item Implementation des kompletten Technologiestacks für fachlich getrennte Geschätseinheiten in einem Service
+        \item Benutzeroberfläche, Datenspeicherung und Kommunikation für einen Geschätsbereich
+        \item Änderungen der Anforderungen bleiben meist service-intern
+        \item Teams arbeiten funktionsübergreifend und haben Kompetenzen in allen Bereichen
+    \end{itemize}
 \end{frame}
 
-\section{Zusammenfassung}
+\section{Fazit}
+\begin{frame}{Bewertung Microservices}
+    Microservices:
+    \begin{itemize}
+        \item Moderner Ansatz zur Lösung von Skalierungs- und Maintenanceproblemen von großen Softwareprojekten
+        \item Man sollte sich dem Aufwand und den Herausforderungen bewusst sein
+        \item Projekte sollten durch Spaltung in diese Architektur überführt werden
+        \item Neuentwicklung mit dieser Architektur kann schwierig und frustrierend sein
+        \item Sind die Hürden überwunden ist die Skalierung und Erweiterung sehr einfach!
+    \end{itemize}
+\end{frame}
+\begin{frame}{Bewertung Quellen}
+    Quellen:
+    \begin{itemize}
+        \item Sam Newman - "Building Microservices" - Sehr gutes Nachschlagewerk
+        \item Die Veröffentlichungen von Fowler haben maßgeblich zur Popularität von Microservices beigetragen
+        \item Beide Quellen werden of als Standartwerke zitiert.
+    \end{itemize}
+\end{frame}
 \begin{frame}{Zusammenfassung}
     Microservices
     \begin{itemize}
@@ -145,6 +247,7 @@
         \item Geringe Kosten für Erweiterung, Skalierung
         \item Automatisierung von Deployment
         \item Hoher Einarbeitungsaufwand
+        \item Kenntnisse über Geschäftsprozesse nötig
     \end{itemize}
 \end{frame}
 \begin{frame}{Danke für Ihre Aufmerksamkeit}
@@ -154,8 +257,14 @@
 \end{frame}
 
 \appendix
-
 \section{Zusatzmaterial}
+\begin{frame}{Quellen}
+    \begin{itemize}
+        \item Fowler \& Lewis - Microservices: Nur ein weiteres Konzept
+              in der Softwarearchitektur oder mehr?
+        \item Sam Newman - Building Microservices
+    \end{itemize}
+\end{frame}
 \begin{frame}{Wann sollte man keine Microservices verwenden?}
     \begin{itemize}
         \item Geschäftsprozesse müssen bekannt sein. \\
@@ -173,6 +282,7 @@
         \item Eventbus
         \item Dynamic Service Registry
         \item Management/Orchestration
+        \item Monitoring
     \end{itemize}
 \end{frame}
 \begin{frame}{Aufbau eines Microservices}

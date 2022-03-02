@@ -1259,6 +1259,16 @@ INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi12
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT ./verlauf.jpg
+INPUT ./verlauf.jpg
+INPUT verlauf.jpg
+INPUT ./verlauf.jpg
+INPUT ./verlauf.jpg
+INPUT ./monolith.jpg
+INPUT ./monolith.jpg
+INPUT monolith.jpg
+INPUT ./monolith.jpg
+INPUT ./monolith.jpg
 INPUT ./cloud2.jpg
 INPUT ./cloud2.jpg
 INPUT cloud2.jpg

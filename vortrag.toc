@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Zielsetzung}{2}{0}{1}
 \beamer@sectionintoc {2}{Einleitung}{4}{0}{2}
-\beamer@sectionintoc {3}{Microservices}{8}{0}{3}
-\beamer@sectionintoc {4}{Definitionsversuch}{13}{0}{4}
-\beamer@sectionintoc {5}{Zusammenfassung}{17}{0}{5}
-\beamer@sectionintoc {6}{Zusatzmaterial}{20}{1}{6}
+\beamer@sectionintoc {3}{Microservices}{9}{0}{3}
+\beamer@sectionintoc {4}{Definitionsversuch}{15}{0}{4}
+\beamer@sectionintoc {5}{Fazit}{19}{0}{5}
+\beamer@sectionintoc {6}{Zusatzmaterial}{24}{1}{6}

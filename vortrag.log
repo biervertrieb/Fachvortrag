@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.27)  27 FEB 2022 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.27)  2 MAR 2022 15:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -722,6 +722,29 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] [16
 
+] [17
+
+] [18
+
+]
+<cloud2.jpg, id=1094, 1606.0pt x 903.375pt>
+File: cloud2.jpg Graphic file (type jpg)
+<use cloud2.jpg>
+Package pdftex.def Info: cloud2.jpg  used on input line 154.
+(pdftex.def)             Requested size: 289.06754pt x 162.60048pt.
+ [19
+
+ <./cloud2.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 157.
+
+[20
+
+] [21
+
+] [22
+
 ]
 \tf@nav=\write6
 \openout6 = `vortrag.nav'.
@@ -734,21 +757,21 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
  (./vortrag.aux)
 Package rerunfilecheck Info: File `vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: DEE59E0470007CC2166843856066DBEF;550.
+(rerunfilecheck)             Checksum: E413EFEE75927567B07227533CED5821;752.
  ) 
 Here is how much of TeX's memory you used:
- 21816 strings out of 478276
- 426347 string characters out of 5850489
- 689647 words of memory out of 5000000
- 39530 multiletter control sequences out of 15000+600000
+ 21928 strings out of 478276
+ 429297 string characters out of 5850489
+ 697648 words of memory out of 5000000
+ 39626 multiletter control sequences out of 15000+600000
  476318 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,122p,430b,773s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on vortrag.pdf (16 pages, 80328 bytes).
+Output written on vortrag.pdf (22 pages, 286532 bytes).
 PDF statistics:
- 837 PDF objects out of 1000 (max. 8388607)
- 767 compressed objects within 8 object streams
- 38 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1267 PDF objects out of 1440 (max. 8388607)
+ 1139 compressed objects within 12 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 440 words of extra memory for PDF output out of 10000 (max. 10000000)
 

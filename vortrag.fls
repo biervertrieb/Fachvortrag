@@ -1259,6 +1259,11 @@ INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi12
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT ./cloud2.jpg
+INPUT ./cloud2.jpg
+INPUT cloud2.jpg
+INPUT ./cloud2.jpg
+INPUT ./cloud2.jpg
 OUTPUT vortrag.nav
 OUTPUT vortrag.toc
 OUTPUT vortrag.snm

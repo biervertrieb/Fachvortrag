@@ -31,25 +31,80 @@
         \item Einführung in das Thema Microservices
         \item Überblick über Herausforderungen und Technologien
         \item Nachvollziehen eines Definitionsversuchs
+        \item Wertung
     \end{itemize}
 \end{frame}
 \begin{frame}{Zielsetzung}
-    Folgende Punkte werden in anderen Vorträgen behandelt:
+    Folgende Punkte werden (fast) nicht behandelt:
     \begin{itemize}
         \item Vor- und Nachteile
-        \item Kubernetes
+        \item Service-Komposition
+        \item Frameworks, Docker und Kubernetes
     \end{itemize}
 \end{frame}
 
 \section{Einleitung}
 \begin{frame}{Geschichte}
     \begin{itemize}
-        \item "Micro Web Services" - Dr. Peter Rodgers in 2005
+        \item 1999 - "resource oriented computing" - Dexter research project, Hewlett Packard Labs - REST als Teil von ROC abstraction
+        \item 2005 - "Software components are Micro-Web-Services" - Dr. Peter Rodgers, Web Services Edge conference
+        \item 2009 - Netflix spaltet den Monolithen und geht in die Cloud
+        \item 2011 - "Microservices" - erste Erwähnung, workshop for software architects
+        \item 2012 - "Microservices" - Namensgebung, workshop for software architects
+        \item 2014 - "Microservices, a definition of this new architectural term" - Lewis Fowler, Fachartikel für Thoughtworks
+        \item 2015 - "Building Microservices" - Buch von Sam Neil, Nachschlagewerk für design, development, deployment, testing und maintenance
     \end{itemize}
 \end{frame}
 \begin{frame}{Grundlagen}
+    \begin{block}{Service-Oriented Architecture}
+        Softwarekomponenten sind eigene Applikationen in einem verteilten System.
+    \end{block}
+    \begin{block}{Agile Entwicklung}
+        \begin{itemize}
+            \item Individuals and interactions over processes and tools
+            \item Working software over comprehensive documentation
+            \item Customer collaboration over contract negotiation
+            \item Responding to change over following a plan
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}{Grundlagen}
+    \begin{block}{DevOps}
+        \begin{itemize}
+            \item Methodensammlung zum Kombinieren von Entwicklung (Dev) und Organisation(Ops)
+            \item Effektive Prozesse und Werkzeuge zur Steigerung der Qualität und Geschwindigkeit
+            \item Betrifft: Entwicklung, Qualitätsmanagement, Auslieferung, Wartung, Kommunikation, ...
+            \item Beispiele: Virtualisierung, Versionsverwaltung, Infrastructure as Code, Continuous Integration
+        \end{itemize}
+    \end{block}
+    \begin{block}{CI/CD}
+        Continuous Integration, Continuous Deployment\\
+        Durchgehende Auslieferung von kleinen Änderungen anstatt Sammeln von Änderungen in größeren Updates
+    \end{block}
 \end{frame}
 \begin{frame}{Motivation}
+    Wir haben eine Sammlung von Anforderungen an die Softwareentwicklung
+    \begin{block}{Organisation}
+        \begin{itemize}
+            \item Wir betrachten große, komplexe Anwendungen.
+            \item Wir wollen kleine, autonome Teams.
+        \end{itemize}
+
+    \end{block}
+    \begin{block}{Prozesse}
+        \begin{itemize}
+            \item Agile Methoden
+            \item CI/CD
+            \item DevOps
+            \item ...
+        \end{itemize}
+    \end{block}
+    \begin{block}{Architektur}
+        \begin{itemize}
+            \item Welcher Stil passt zu unseren Anforderungen?
+        \end{itemize}
+    \end{block}
+
 \end{frame}
 
 \section{Microservices}
@@ -58,6 +113,8 @@
 \begin{frame}{Microservices}
 \end{frame}
 \begin{frame}{Microservices}
+\end{frame}
+\begin{frame}{Kritik}
 \end{frame}
 \begin{frame}{Bewertung}
 \end{frame}
@@ -74,8 +131,57 @@
 
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
+    Microservices
+    \begin{itemize}
+        \item Beschreibung eines Architekturstils
+        \item Keine formale Definition
+        \item Definitionsversuch über gemeinsame Merkmale
+        \item Aufbrechen von vorhandener Software entlang von geschäftsrelevanten Grenzen
+    \end{itemize}
+\end{frame}
+\begin{frame}{Zusammenfassung}
+    Microservices
+    \begin{itemize}
+        \item Geringe Kosten für Erweiterung, Skalierung
+        \item Automatisierung von Deployment
+        \item Hoher Einarbeitungsaufwand
+    \end{itemize}
 \end{frame}
 \begin{frame}{Danke für Ihre Aufmerksamkeit}
+    \centering Fragen?
+    \\~\\
+    \centering \includegraphics[scale=0.18]{cloud2.jpg}
+\end{frame}
+
+\appendix
+
+\section{Zusatzmaterial}
+\begin{frame}{Wann sollte man keine Microservices verwenden?}
+    \begin{itemize}
+        \item Geschäftsprozesse müssen bekannt sein. \\
+              Änderungen in Service-Service Beziehungen sind teuer!
+        \item Bei Neuentwicklungen sind die Abhängigkeiten zwischen Geschäftsprozessen nicht ausreichend bekannt. \\
+              Man sollte mit einem Monolithen starten!
+        \item Probleme die durch Microservices verursacht werden verschlimmern sich mit der Skalierung. \\
+              Implementierung von Microservices sollte graduell passieren, je nach Änderungsvermögen des Systems!
+    \end{itemize}
+\end{frame}
+\begin{frame}{Besondere Services}
+    \begin{itemize}
+        \item Ingress
+        \item API Gateway
+        \item Eventbus
+        \item Dynamic Service Registry
+        \item Management/Orchestration
+    \end{itemize}
+\end{frame}
+\begin{frame}{Aufbau eines Microservices}
+    \begin{itemize}
+        \item Cluster IP
+        \item Cache
+        \item Security
+        \item Safety
+    \end{itemize}
 \end{frame}
 
 \end{document}
